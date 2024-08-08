@@ -16,7 +16,7 @@ public class SignUpPageTest extends BaseClass {
 	
 	
 	
-	@Test(description = "Error validation of first name field", priority = 0, groups = {"regression","sanity"})
+	@Test(description = "Error validation of first name field", priority = 0, groups = {"regression","sanity"},retryAnalyzer = Retryanalyzer.class)
 	public void validationOfFirstNameFildTest() throws InterruptedException {
 		HomePageEvent HMEvent = new HomePageEvent();
 		HMEvent.validateSignUpButton();
@@ -24,7 +24,7 @@ public class SignUpPageTest extends BaseClass {
 		signUpPageEvent.validationOfSignUpPage();
 	}
 	
-	@Test(description = "Error validation of Last name field", priority = 1, groups = {"regression"})
+	@Test(description = "Error validation of Last name field", priority = 1, groups = {"regression"},retryAnalyzer = Retryanalyzer.class)
 	public void validationOfLastNameFildTest() throws InterruptedException {
 		HomePageEvent HMEvent = new HomePageEvent();
 		HMEvent.validateSignUpButton();
@@ -32,7 +32,7 @@ public class SignUpPageTest extends BaseClass {
 		signUpPageEvent.valiationOfLastName();
 	}
 	
-	@Test
+	@Test(retryAnalyzer = Retryanalyzer.class)
 	public void validationOfEmailFeildTest() throws InterruptedException {
 		HomePageEvent HMEvent = new HomePageEvent();
 		HMEvent.validateSignUpButton();

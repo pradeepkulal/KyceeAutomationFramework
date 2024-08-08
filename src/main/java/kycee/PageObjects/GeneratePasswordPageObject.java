@@ -26,6 +26,7 @@ public class GeneratePasswordPageObject extends BaseClass {
 		return driver.findElement(By.linkText(constant.SignInPageBtn));
 	}
 	
+
 	public WebElement getElementPassword() {
 		return driver.findElement(By.name(constant.password));
 	}

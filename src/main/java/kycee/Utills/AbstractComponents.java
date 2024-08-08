@@ -7,10 +7,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.imageio.ImageIO;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -26,11 +27,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.ITestResult;
-
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
 import java.io.File;
 
 import kycee.Base.BaseClass;
@@ -59,8 +55,44 @@ public class AbstractComponents extends BaseClass{
 		}
 	}
 
+	public boolean isNotClickable(WebElement... elements) {
+	    List<WebElement> elementsChecked = new ArrayList<>();
+	    List<WebElement> elementsToCheckByClass = new ArrayList<>();
+	    List<WebElement> elementsToCheckByClick = new ArrayList<>();
+	    List<WebElement> elementsToCheckBySendKeys = new ArrayList<>();
 
-	public static boolean isElementClickable(WebElement element,Duration duration) {
+	    for (WebElement checkedElement : elements) {
+	        if (checkedElement.isEnabled()) {
+	            elementsToCheckByClass.add(checkedElement);
+	        } else {
+	            elementsChecked.add(checkedElement);
+	        }
+	    }
+	    if (!elementsToCheckByClass.isEmpty()) {
+	        for (WebElement checkedByClassElement : elementsToCheckByClass) {
+	            String classOfElement = checkedByClassElement.getAttribute("class");
+	            List<String> classes = new ArrayList<>(Arrays.asList(classOfElement.split(" ")));
+	            if (!classes.contains("select2-container-disabled")) {
+	                elementsToCheckByClick.add(checkedByClassElement);
+	            } else {
+	                elementsChecked.add(checkedByClassElement);
+	            }
+	        }
+	    }
+	    if (!elementsToCheckBySendKeys.isEmpty()) {
+	        for (WebElement checkedBySendKeysElement : elementsToCheckBySendKeys) {
+	            try {
+	                checkedBySendKeysElement.sendKeys("checking");
+	                return false;
+	            } catch (Exception e) {
+	                elementsChecked.add(checkedBySendKeysElement);
+	            }
+	        }
+	    }
+	    return elementsChecked.size() == elements.length;
+	}
+
+	public static boolean isElementClickable(WebElement element) {
 		try {
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 			return true;
@@ -80,6 +112,7 @@ public class AbstractComponents extends BaseClass{
 
 	public static boolean isElementDisplayed(WebElement element) {
 		try {
+		waitForWebElementToAppear(driver, element);
 			return element.isDisplayed();
 		} catch (Exception e) {
 			return false;
@@ -99,20 +132,20 @@ public class AbstractComponents extends BaseClass{
 	}
 
 	public static void waitForWebElementToAppear(WebDriver driver,WebElement element) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
- 
+
 	public void waitForElementToDisappear(WebDriver driver,WebElement ele) throws InterruptedException
 	{
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 			wait.until(ExpectedConditions.invisibilityOf(ele));
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	public static void selectOptionByText(WebElement dropdownElement, String visibleText) {
@@ -228,9 +261,9 @@ public class AbstractComponents extends BaseClass{
 		return element.getText();
 	}
 
-	public static void verifyColorOfTheElement(WebElement ele, String expectedColor) {
+	public static void verifyBackGroundColorOfTheElement(WebElement ele, String expectedColor) {
 		String actualColor = convertColorToHex("background-color",ele);
-		
+
 		if (actualColor.equalsIgnoreCase(expectedColor)) {
 			System.out.println(ele.getText() +" Color is Proper");
 			Assert.assertTrue(true, actualColor);
@@ -248,12 +281,33 @@ public class AbstractComponents extends BaseClass{
 			}
 		}
 	}
-	
+
+	public static void verifyColorOfTheElement(WebElement ele, String expectedColor) {
+		String actualColor = convertColorToHex("color",ele);
+
+		if (actualColor.equalsIgnoreCase(expectedColor)) {
+			System.out.println(ele.getText() +" Color is Proper");
+			Assert.assertTrue(true, actualColor);
+		}else {
+			System.out.println(ele.getText() +" Color is Not  Proper");
+			try {
+				Logger.error(ele.getText() +" Actual Color: " + actualColor +" Expected Color: " + expectedColor);
+				System.out.println(ele.getText().concat(getCurrentTimeInString()));
+				String path = System.getProperty("user.dir")+ "\\ScreenShots\\" + ele.getText().concat(getCurrentTimeInString()) + ".png";
+				takeScreenShot(ele, path);
+				Logger.addScreenCaptureFromPath(path);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
 	public static boolean verifyTextOfthWebEement(WebElement ele, String expectedText) {
 		waitForSeconds(1);
 		moveCursorToWebElement(ele, 30);
 		String actualText = getTextOfWebElement(ele);
-		
+
 		if (actualText.equals(expectedText)) {
 			System.out.println(ele.getText() +" Text is proper");
 			Assert.assertTrue(true, actualText);
@@ -272,7 +326,7 @@ public class AbstractComponents extends BaseClass{
 		}
 		return false;
 	}
-	
+
 
 	public void assertNumericDataFromExcel(String actualCount,String cellData,String countOf) {
 		AbstractComponents abstracC = new AbstractComponents();
@@ -283,86 +337,125 @@ public class AbstractComponents extends BaseClass{
 		if (actualVerificationCount == expectedVerificationCount) {
 			System.out.println(countOf + " Count is correct");
 		}else {
-		Assert.assertEquals(actualVerificationCount, expectedVerificationCount, countOf + " Count is not correct");
+			Assert.assertEquals(actualVerificationCount, expectedVerificationCount, countOf + " Count is not correct");
 		}
 	}
-	
+
 	public void writeDataInExcel(String sheetName, String colName, int rowNum, String data){
 		testDataXL.setCellData(sheetName, colName,rowNum, data);
 	}
-	
+
 	public static void takeElementScreenShot(WebDriver driver,WebElement element,String filePath) {
 		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		
+
 		int width = element.getSize().getWidth();
 		int height = element.getSize().getHeight();
-		
+
 		Point p = element.getLocation();
 		int x = p.getX();
 		int y = p.getY();
-		
+
 		try {
 			BufferedImage fullImg = ImageIO.read(screenshot);
 			BufferedImage eleScreenShot = fullImg.getSubimage(x, y, width, height);
 			ImageIO.write(eleScreenShot, "png", screenshot);
 			File screenShotLocation = new File(filePath);
 			FileHandler.copy(screenshot, screenShotLocation);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	public static void takeScreenShot(WebElement element,String filePath) {
 		File screenshot = element.getScreenshotAs(OutputType.FILE);
 
-        // Define the destination path
-        File destination = new File(filePath);
+		// Define the destination path
+		File destination = new File(filePath);
 
-        // Copy the screenshot to the destination path
-        try {
+		// Copy the screenshot to the destination path
+		try {
 			FileHandler.copy(screenshot, destination);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-        System.out.println("Screenshot saved successfully.");
+		System.out.println("Screenshot saved successfully.");
 	}
-	
+
 	public static String getCurrentTimeInString() {
 		// Get the current date and time
-        LocalDateTime now = LocalDateTime.now();
-        // Define a formatter
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
-        // Format the current date and time
-        String formattedDateTime = now.format(formatter);
-        return formattedDateTime;
+		LocalDateTime now = LocalDateTime.now();
+		// Define a formatter
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+		// Format the current date and time
+		String formattedDateTime = now.format(formatter);
+		return formattedDateTime;
 	}
-	
+
 	public static String getCurrentTime() {
 		// Get the current date and time
-        LocalDateTime now = LocalDateTime.now();
-        // Define a formatter
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH-mm-ss");
-        // Format the current date and time
-        String formattedDateTime = now.format(formatter);
-        return formattedDateTime;
+		LocalDateTime now = LocalDateTime.now();
+		// Define a formatter
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH-mm-ss");
+		// Format the current date and time
+		String formattedDateTime = now.format(formatter);
+		return formattedDateTime;
 	}
-	
-public  List<String> getFirstRowDetails(WebElement ele) {
+
+	public  List<String> getFirstRowDetails(WebElement ele) {
 		awaitForElementPresence(ele, 20);
-			String[] text= ele.getText().toLowerCase().split("\n");
+		String[] text= ele.getText().toLowerCase().split("\n");
 		List<String> firstRowDetails= Arrays.asList(text);
 		return firstRowDetails;
 	}
 
-public void enterData(WebElement element, Keys enter) {
-	try { 
-		element.sendKeys(enter);
-	} catch (Exception e) {
-		System.out.println("Error occured while inputing Keys int the field " + e.getMessage());
-	}	
-}
+	public void enterData(WebElement element, Keys enter) {
+		try { 
+			element.sendKeys(enter);
+		} catch (Exception e) {
+			System.out.println("Error occured while inputing Keys int the field " + e.getMessage());
+		}	
+	}
+
+	public void uploadFile(String path) {
+		WebElement ele = driver.findElement(By.xpath(constant.uploadXpath));
+		ele.sendKeys(path);
+	}
+
+	public static String convertToRunningText(String sentence) {
+		// Remove special characters (e.g., punctuation) and replace multiple spaces with a single space
+		String runningText = sentence.replaceAll("[^a-zA-Z0-9 ]", "").replaceAll("\\s+", " ").trim();
+		return runningText;
+	}
+
+	public static String capitalizeFirstLetter(String sentence) {
+		if (sentence == null || sentence.isEmpty()) {
+			return sentence;
+		}
+
+		// Convert the first character to uppercase and concatenate with the rest of the sentence
+		return sentence.substring(0, 1).toUpperCase() + sentence.substring(1);
+	}
+	
+	  public static double roundToOneDecimalPlace(double value) {
+	        // Multiply by 10, round, then divide by 10
+	        return Math.round(value * 10) / 10.0;
+	    }
+	  public static double roundToTwoDecimalPlace(double value) {
+	        // Multiply by 10, round, then divide by 10
+	        return Math.round(value * 100) / 100.0;
+	    }
+	  public boolean compareToList(List<String> list1,List<String> list2) {
+		  Set<String> set2 = new HashSet<>(list2);
+
+	        for (String item : list1) {
+	            if (!set2.contains(item)) {
+	                return false;
+	            }
+	        }
+	        return true;
+	}
 }

@@ -85,7 +85,7 @@ public class BaseClass {
 	}
 
 
-	@AfterMethod(alwaysRun = true)
+	@AfterMethod
 	public void afterMethod(ITestResult result) {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			
@@ -116,17 +116,18 @@ public class BaseClass {
 
 
 	private void setupDriver(String browser) {
-		if (browser.equalsIgnoreCase("chrome")) {
+		String browserName = System.getProperty("browser")!= null ? System.getProperty("browser") : browser;
+		if (browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().clearDriverCache().setup();
 			WebDriverManager.chromedriver().clearResolutionCache().setup();
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}
-		if (browser.equalsIgnoreCase("firefox")) {
+		if (browserName.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
-		if (browser.equalsIgnoreCase("edge")) {
+		if (browserName.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}

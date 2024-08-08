@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="7" failed="1" skipped="0">
+<testng-results ignored="0" total="13" passed="12" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-02T10:12:12 IST" name="Suite" finished-at="2024-08-02T10:24:27 IST" duration-ms="735452">
+  <suite started-at="2024-08-08T13:52:18 IST" name="Suite" finished-at="2024-08-08T14:08:59 IST" duration-ms="1000459">
     <groups>
     </groups>
-    <test started-at="2024-08-02T10:12:12 IST" name="Test" finished-at="2024-08-02T10:24:27 IST" duration-ms="735452">
-      <class name="Sanity.SampleTest">
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:Sanity.SampleTest@574b560f]" started-at="2024-08-02T10:12:12 IST" name="beforeTestMethod" finished-at="2024-08-02T10:12:12 IST" duration-ms="922" status="PASS">
+    <test started-at="2024-08-08T13:52:18 IST" name="Test" finished-at="2024-08-08T14:08:59 IST" duration-ms="1000459">
+      <class name="Sanity.AddUserPageTest">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:Sanity.AddUserPageTest@36d585c]" started-at="2024-08-08T13:52:18 IST" name="beforeTestMethod" finished-at="2024-08-08T13:52:19 IST" duration-ms="883" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.SampleTest@574b560f]" started-at="2024-08-02T10:12:12 IST" name="beforeMethodMethod" finished-at="2024-08-02T10:12:21 IST" duration-ms="8840" status="PASS">
+        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.AddUserPageTest@36d585c]" started-at="2024-08-08T13:52:19 IST" name="beforeMethodMethod" finished-at="2024-08-08T13:52:26 IST" duration-ms="7202" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -20,35 +20,190 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[public void Sanity.SampleTest.notificationMessageInForgotPasswordPageTest() throws java.lang.InterruptedException,java.io.IOException]]>
+                <![CDATA[public void Sanity.AddUserPageTest.succeffullyCreatingNewUserTest() throws java.lang.InterruptedException,java.io.IOException,com.mailosaur.MailosaurException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethodMethod -->
-        <test-method signature="notificationMessageInForgotPasswordPageTest()[pri:0, instance:Sanity.SampleTest@574b560f]" started-at="2024-08-02T10:12:21 IST" name="notificationMessageInForgotPasswordPageTest" finished-at="2024-08-02T10:12:43 IST" duration-ms="21386" status="PASS">
+        <test-method signature="succeffullyCreatingNewUserTest()[pri:0, instance:Sanity.AddUserPageTest@36d585c]" started-at="2024-08-08T13:52:26 IST" name="succeffullyCreatingNewUserTest" finished-at="2024-08-08T13:53:40 IST" duration-ms="74112" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- notificationMessageInForgotPasswordPageTest -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.SampleTest@574b560f]" started-at="2024-08-02T10:12:43 IST" name="afterMethod" finished-at="2024-08-02T10:12:43 IST" duration-ms="141" status="PASS">
+        </test-method> <!-- succeffullyCreatingNewUserTest -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.AddUserPageTest@36d585c]" started-at="2024-08-08T13:53:40 IST" name="afterMethod" finished-at="2024-08-08T13:53:41 IST" duration-ms="209" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=notificationMessageInForgotPasswordPageTest status=SUCCESS method=SampleTest.notificationMessageInForgotPasswordPageTest()[pri:0, instance:Sanity.SampleTest@574b560f] output={null}]]]>
+                <![CDATA[[TestResult name=succeffullyCreatingNewUserTest status=SUCCESS method=AddUserPageTest.succeffullyCreatingNewUserTest()[pri:0, instance:Sanity.AddUserPageTest@36d585c] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:Sanity.SampleTest@574b560f]" started-at="2024-08-02T10:24:27 IST" name="afterTest" finished-at="2024-08-02T10:24:27 IST" duration-ms="191" status="PASS">
+        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.AddUserPageTest@36d585c]" started-at="2024-08-08T13:53:41 IST" name="beforeMethodMethod" finished-at="2024-08-08T13:53:48 IST" duration-ms="7244" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void Sanity.AddUserPageTest.fieldValidationTestInGeneratePasswordPage() throws java.lang.InterruptedException,java.io.IOException,com.mailosaur.MailosaurException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethodMethod -->
+        <test-method signature="fieldValidationTestInGeneratePasswordPage()[pri:1, instance:Sanity.AddUserPageTest@36d585c]" started-at="2024-08-08T13:53:48 IST" name="fieldValidationTestInGeneratePasswordPage" finished-at="2024-08-08T13:54:57 IST" depends-on-methods="Sanity.AddUserPageTest.succeffullyCreatingNewUserTest" duration-ms="69043" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fieldValidationTestInGeneratePasswordPage -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.AddUserPageTest@36d585c]" started-at="2024-08-08T13:54:57 IST" name="afterMethod" finished-at="2024-08-08T13:54:57 IST" duration-ms="181" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=fieldValidationTestInGeneratePasswordPage status=SUCCESS method=AddUserPageTest.fieldValidationTestInGeneratePasswordPage()[pri:1, instance:Sanity.AddUserPageTest@36d585c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:Sanity.AddUserPageTest@36d585c]" started-at="2024-08-08T14:08:58 IST" name="afterTest" finished-at="2024-08-08T14:08:59 IST" duration-ms="189" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- Sanity.SampleTest -->
+      </class> <!-- Sanity.AddUserPageTest -->
       <class name="Sanity.ForgotPasswordTest">
-        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:12:43 IST" name="beforeMethodMethod" finished-at="2024-08-02T10:12:51 IST" duration-ms="7933" status="PASS">
+        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T13:54:57 IST" name="beforeMethodMethod" finished-at="2024-08-08T13:55:06 IST" duration-ms="9279" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void Sanity.ForgotPasswordTest.emailFieldErrorMessageInForgotPasswordPageTest() throws java.lang.InterruptedException,java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethodMethod -->
+        <test-method signature="emailFieldErrorMessageInForgotPasswordPageTest()[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T13:55:06 IST" name="emailFieldErrorMessageInForgotPasswordPageTest" finished-at="2024-08-08T13:55:28 IST" duration-ms="21588" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emailFieldErrorMessageInForgotPasswordPageTest -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T13:55:28 IST" name="afterMethod" finished-at="2024-08-08T13:55:28 IST" duration-ms="154" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=emailFieldErrorMessageInForgotPasswordPageTest status=SUCCESS method=ForgotPasswordTest.emailFieldErrorMessageInForgotPasswordPageTest()[pri:0, instance:Sanity.ForgotPasswordTest@1329eff] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T13:55:28 IST" name="beforeMethodMethod" finished-at="2024-08-08T13:55:37 IST" duration-ms="9038" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void Sanity.ForgotPasswordTest.verifyNavigationToSignInPageFromForgotPasswordPage() throws java.lang.InterruptedException,java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethodMethod -->
+        <test-method signature="verifyNavigationToSignInPageFromForgotPasswordPage()[pri:1, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T13:55:37 IST" name="verifyNavigationToSignInPageFromForgotPasswordPage" finished-at="2024-08-08T13:55:53 IST" duration-ms="15615" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigationToSignInPageFromForgotPasswordPage -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T13:55:53 IST" name="afterMethod" finished-at="2024-08-08T13:55:53 IST" duration-ms="684" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyNavigationToSignInPageFromForgotPasswordPage status=SUCCESS method=ForgotPasswordTest.verifyNavigationToSignInPageFromForgotPasswordPage()[pri:1, instance:Sanity.ForgotPasswordTest@1329eff] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T13:55:53 IST" name="beforeMethodMethod" finished-at="2024-08-08T13:56:01 IST" duration-ms="7287" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void Sanity.ForgotPasswordTest.verifyNavigationToSignUpPageFromForgotPasswordPage() throws java.lang.InterruptedException,java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethodMethod -->
+        <test-method signature="verifyNavigationToSignUpPageFromForgotPasswordPage()[pri:2, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T13:56:01 IST" name="verifyNavigationToSignUpPageFromForgotPasswordPage" finished-at="2024-08-08T13:56:17 IST" duration-ms="16313" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigationToSignUpPageFromForgotPasswordPage -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T13:56:17 IST" name="afterMethod" finished-at="2024-08-08T13:56:17 IST" duration-ms="164" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyNavigationToSignUpPageFromForgotPasswordPage status=SUCCESS method=ForgotPasswordTest.verifyNavigationToSignUpPageFromForgotPasswordPage()[pri:2, instance:Sanity.ForgotPasswordTest@1329eff] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T13:56:17 IST" name="beforeMethodMethod" finished-at="2024-08-08T13:56:24 IST" duration-ms="7126" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void Sanity.ForgotPasswordTest.verifyInvalidEmailIDErrorNotificationMessagesInForgotPasswordPage() throws java.lang.InterruptedException,java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethodMethod -->
+        <test-method signature="verifyInvalidEmailIDErrorNotificationMessagesInForgotPasswordPage()[pri:3, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T13:56:24 IST" name="verifyInvalidEmailIDErrorNotificationMessagesInForgotPasswordPage" finished-at="2024-08-08T13:56:42 IST" duration-ms="17445" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyInvalidEmailIDErrorNotificationMessagesInForgotPasswordPage -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T13:56:42 IST" name="afterMethod" finished-at="2024-08-08T13:56:43 IST" duration-ms="821" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyInvalidEmailIDErrorNotificationMessagesInForgotPasswordPage status=SUCCESS method=ForgotPasswordTest.verifyInvalidEmailIDErrorNotificationMessagesInForgotPasswordPage()[pri:3, instance:Sanity.ForgotPasswordTest@1329eff] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T13:56:43 IST" name="beforeMethodMethod" finished-at="2024-08-08T13:56:50 IST" duration-ms="7083" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -64,22 +219,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethodMethod -->
-        <test-method signature="verifyTimeDiffrenceBetweenResetPasswordNotificationMessagesInForgotPasswordPage()[pri:4, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:12:51 IST" name="verifyTimeDiffrenceBetweenResetPasswordNotificationMessagesInForgotPasswordPage" finished-at="2024-08-02T10:18:53 IST" duration-ms="362372" status="PASS">
+        <test-method signature="verifyTimeDiffrenceBetweenResetPasswordNotificationMessagesInForgotPasswordPage()[pri:4, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T13:56:50 IST" name="verifyTimeDiffrenceBetweenResetPasswordNotificationMessagesInForgotPasswordPage" finished-at="2024-08-08T14:02:51 IST" duration-ms="361299" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyTimeDiffrenceBetweenResetPasswordNotificationMessagesInForgotPasswordPage -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:18:53 IST" name="afterMethod" finished-at="2024-08-02T10:18:53 IST" duration-ms="178" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:02:51 IST" name="afterMethod" finished-at="2024-08-08T14:02:51 IST" duration-ms="255" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyTimeDiffrenceBetweenResetPasswordNotificationMessagesInForgotPasswordPage status=SUCCESS method=ForgotPasswordTest.verifyTimeDiffrenceBetweenResetPasswordNotificationMessagesInForgotPasswordPage()[pri:4, instance:Sanity.ForgotPasswordTest@5f16132a] output={null}]]]>
+                <![CDATA[[TestResult name=verifyTimeDiffrenceBetweenResetPasswordNotificationMessagesInForgotPasswordPage status=SUCCESS method=ForgotPasswordTest.verifyTimeDiffrenceBetweenResetPasswordNotificationMessagesInForgotPasswordPage()[pri:4, instance:Sanity.ForgotPasswordTest@1329eff] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:18:53 IST" name="beforeMethodMethod" finished-at="2024-08-02T10:19:01 IST" duration-ms="8151" status="PASS">
+        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:02:51 IST" name="beforeMethodMethod" finished-at="2024-08-08T14:02:58 IST" duration-ms="6376" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -95,7 +250,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethodMethod -->
-        <test-method signature="verifyResetPasswordUsingExpiredLink()[pri:5, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:19:01 IST" name="verifyResetPasswordUsingExpiredLink" finished-at="2024-08-02T10:22:08 IST" duration-ms="186199" status="FAIL">
+        <test-method signature="verifyResetPasswordUsingExpiredLink()[pri:5, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:02:58 IST" name="verifyResetPasswordUsingExpiredLink" finished-at="2024-08-08T14:06:06 IST" duration-ms="188187" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Link is not expired expected [true] but found [false]]]>
@@ -105,8 +260,8 @@
 at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1578)
 at org.testng.Assert.assertTrue(Assert.java:57)
-at kycee.PageEvent.GeneratePasswordEvent.verifyExpiredGeneratePasswordPageLink(GeneratePasswordEvent.java:68)
-at Sanity.ForgotPasswordTest.verifyResetPasswordUsingExpiredLink(ForgotPasswordTest.java:76)
+at kycee.PageEvent.GeneratePasswordEvent.verifyExpiredGeneratePasswordPageLink(GeneratePasswordEvent.java:83)
+at Sanity.ForgotPasswordTest.verifyResetPasswordUsingExpiredLink(ForgotPasswordTest.java:72)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -141,18 +296,18 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyResetPasswordUsingExpiredLink -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:22:08 IST" name="afterMethod" finished-at="2024-08-02T10:22:08 IST" duration-ms="344" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:06:06 IST" name="afterMethod" finished-at="2024-08-08T14:06:06 IST" duration-ms="347" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyResetPasswordUsingExpiredLink status=FAILURE method=ForgotPasswordTest.verifyResetPasswordUsingExpiredLink()[pri:5, instance:Sanity.ForgotPasswordTest@5f16132a] output={null}]]]>
+                <![CDATA[[TestResult name=verifyResetPasswordUsingExpiredLink status=FAILURE method=ForgotPasswordTest.verifyResetPasswordUsingExpiredLink()[pri:5, instance:Sanity.ForgotPasswordTest@1329eff] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:22:08 IST" name="beforeMethodMethod" finished-at="2024-08-02T10:22:16 IST" duration-ms="7608" status="PASS">
+        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:06:06 IST" name="beforeMethodMethod" finished-at="2024-08-08T14:06:13 IST" duration-ms="6947" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -168,22 +323,22 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethodMethod -->
-        <test-method signature="verifyFieldErrorMessageInResetPasswordPageTest()[pri:6, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:22:16 IST" name="verifyFieldErrorMessageInResetPasswordPageTest" finished-at="2024-08-02T10:22:36 IST" duration-ms="20356" status="PASS">
+        <test-method signature="verifyFieldErrorMessageInResetPasswordPageTest()[pri:6, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:06:13 IST" name="verifyFieldErrorMessageInResetPasswordPageTest" finished-at="2024-08-08T14:06:36 IST" duration-ms="23357" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFieldErrorMessageInResetPasswordPageTest -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:22:36 IST" name="afterMethod" finished-at="2024-08-02T10:22:36 IST" duration-ms="441" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:06:36 IST" name="afterMethod" finished-at="2024-08-08T14:06:37 IST" duration-ms="116" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyFieldErrorMessageInResetPasswordPageTest status=SUCCESS method=ForgotPasswordTest.verifyFieldErrorMessageInResetPasswordPageTest()[pri:6, instance:Sanity.ForgotPasswordTest@5f16132a] output={null}]]]>
+                <![CDATA[[TestResult name=verifyFieldErrorMessageInResetPasswordPageTest status=SUCCESS method=ForgotPasswordTest.verifyFieldErrorMessageInResetPasswordPageTest()[pri:6, instance:Sanity.ForgotPasswordTest@1329eff] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:22:36 IST" name="beforeMethodMethod" finished-at="2024-08-02T10:22:44 IST" duration-ms="7389" status="PASS">
+        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:06:37 IST" name="beforeMethodMethod" finished-at="2024-08-08T14:06:44 IST" duration-ms="7621" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -192,29 +347,29 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             </param>
             <param index="1">
               <value>
-                <![CDATA[public void Sanity.ForgotPasswordTest.verifyOldPasswordErrorNotificaationMessagesInGeneratePasswordField() throws java.lang.InterruptedException,java.io.IOException,com.mailosaur.MailosaurException]]>
+                <![CDATA[public void Sanity.ForgotPasswordTest.verifyOldPasswordErrorNotificaationMessagesInResetPasswordField() throws java.lang.InterruptedException,java.io.IOException,com.mailosaur.MailosaurException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethodMethod -->
-        <test-method signature="verifyOldPasswordErrorNotificaationMessagesInGeneratePasswordField()[pri:7, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:22:44 IST" name="verifyOldPasswordErrorNotificaationMessagesInGeneratePasswordField" finished-at="2024-08-02T10:22:58 IST" duration-ms="13802" status="PASS">
+        <test-method signature="verifyOldPasswordErrorNotificaationMessagesInResetPasswordField()[pri:7, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:06:44 IST" name="verifyOldPasswordErrorNotificaationMessagesInResetPasswordField" finished-at="2024-08-08T14:07:03 IST" duration-ms="18445" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyOldPasswordErrorNotificaationMessagesInGeneratePasswordField -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:22:58 IST" name="afterMethod" finished-at="2024-08-02T10:22:58 IST" duration-ms="120" status="PASS">
+        </test-method> <!-- verifyOldPasswordErrorNotificaationMessagesInResetPasswordField -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:07:03 IST" name="afterMethod" finished-at="2024-08-08T14:07:03 IST" duration-ms="500" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyOldPasswordErrorNotificaationMessagesInGeneratePasswordField status=SUCCESS method=ForgotPasswordTest.verifyOldPasswordErrorNotificaationMessagesInGeneratePasswordField()[pri:7, instance:Sanity.ForgotPasswordTest@5f16132a] output={null}]]]>
+                <![CDATA[[TestResult name=verifyOldPasswordErrorNotificaationMessagesInResetPasswordField status=SUCCESS method=ForgotPasswordTest.verifyOldPasswordErrorNotificaationMessagesInResetPasswordField()[pri:7, instance:Sanity.ForgotPasswordTest@1329eff] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:22:58 IST" name="beforeMethodMethod" finished-at="2024-08-02T10:23:06 IST" duration-ms="8059" status="PASS">
+        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:07:03 IST" name="beforeMethodMethod" finished-at="2024-08-08T14:07:10 IST" duration-ms="7349" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -230,22 +385,22 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethodMethod -->
-        <test-method signature="verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink()[pri:8, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:23:06 IST" name="verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink" finished-at="2024-08-02T10:23:31 IST" duration-ms="25510" status="PASS">
+        <test-method signature="verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink()[pri:8, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:07:10 IST" name="verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink" finished-at="2024-08-08T14:07:55 IST" duration-ms="44509" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:23:31 IST" name="afterMethod" finished-at="2024-08-02T10:23:31 IST" duration-ms="122" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:07:55 IST" name="afterMethod" finished-at="2024-08-08T14:07:55 IST" duration-ms="180" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink status=SUCCESS method=ForgotPasswordTest.verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink()[pri:8, instance:Sanity.ForgotPasswordTest@5f16132a] output={null}]]]>
+                <![CDATA[[TestResult name=verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink status=SUCCESS method=ForgotPasswordTest.verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink()[pri:8, instance:Sanity.ForgotPasswordTest@1329eff] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:23:31 IST" name="beforeMethodMethod" finished-at="2024-08-02T10:23:39 IST" duration-ms="7716" status="PASS">
+        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:07:55 IST" name="beforeMethodMethod" finished-at="2024-08-08T14:08:03 IST" duration-ms="7467" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -261,22 +416,22 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethodMethod -->
-        <test-method signature="verifyResetPasswordUsingExpiredLinkAfterResetingPasswordSuccessfuly()[pri:10, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:23:39 IST" name="verifyResetPasswordUsingExpiredLinkAfterResetingPasswordSuccessfuly" finished-at="2024-08-02T10:23:49 IST" depends-on-methods="Sanity.ForgotPasswordTest.verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink" duration-ms="10047" status="PASS">
+        <test-method signature="verifyResetPasswordUsingExpiredLinkAfterResetingPasswordSuccessfuly()[pri:10, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:08:03 IST" name="verifyResetPasswordUsingExpiredLinkAfterResetingPasswordSuccessfuly" finished-at="2024-08-08T14:08:16 IST" depends-on-methods="Sanity.ForgotPasswordTest.verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink" duration-ms="13567" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyResetPasswordUsingExpiredLinkAfterResetingPasswordSuccessfuly -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:23:49 IST" name="afterMethod" finished-at="2024-08-02T10:23:49 IST" duration-ms="117" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:08:16 IST" name="afterMethod" finished-at="2024-08-08T14:08:16 IST" duration-ms="133" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyResetPasswordUsingExpiredLinkAfterResetingPasswordSuccessfuly status=SUCCESS method=ForgotPasswordTest.verifyResetPasswordUsingExpiredLinkAfterResetingPasswordSuccessfuly()[pri:10, instance:Sanity.ForgotPasswordTest@5f16132a] output={null}]]]>
+                <![CDATA[[TestResult name=verifyResetPasswordUsingExpiredLinkAfterResetingPasswordSuccessfuly status=SUCCESS method=ForgotPasswordTest.verifyResetPasswordUsingExpiredLinkAfterResetingPasswordSuccessfuly()[pri:10, instance:Sanity.ForgotPasswordTest@1329eff] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:23:49 IST" name="beforeMethodMethod" finished-at="2024-08-02T10:23:57 IST" duration-ms="7820" status="PASS">
+        <test-method is-config="true" signature="beforeMethodMethod(java.lang.String,java.lang.reflect.Method)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:08:16 IST" name="beforeMethodMethod" finished-at="2024-08-08T14:08:22 IST" duration-ms="6107" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -292,15 +447,15 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethodMethod -->
-        <test-method signature="verifyMaximumAttemptsErrorNotificationMessagesInForgotPasswordPage()[pri:11, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:23:57 IST" name="verifyMaximumAttemptsErrorNotificationMessagesInForgotPasswordPage" finished-at="2024-08-02T10:24:27 IST" duration-ms="29515" status="PASS">
+        <test-method signature="verifyMaximumAttemptsErrorNotificationMessagesInForgotPasswordPage()[pri:11, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:08:22 IST" name="verifyMaximumAttemptsErrorNotificationMessagesInForgotPasswordPage" finished-at="2024-08-08T14:08:58 IST" duration-ms="35235" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyMaximumAttemptsErrorNotificationMessagesInForgotPasswordPage -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@5f16132a]" started-at="2024-08-02T10:24:27 IST" name="afterMethod" finished-at="2024-08-02T10:24:27 IST" duration-ms="127" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Sanity.ForgotPasswordTest@1329eff]" started-at="2024-08-08T14:08:58 IST" name="afterMethod" finished-at="2024-08-08T14:08:58 IST" duration-ms="757" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyMaximumAttemptsErrorNotificationMessagesInForgotPasswordPage status=SUCCESS method=ForgotPasswordTest.verifyMaximumAttemptsErrorNotificationMessagesInForgotPasswordPage()[pri:11, instance:Sanity.ForgotPasswordTest@5f16132a] output={null}]]]>
+                <![CDATA[[TestResult name=verifyMaximumAttemptsErrorNotificationMessagesInForgotPasswordPage status=SUCCESS method=ForgotPasswordTest.verifyMaximumAttemptsErrorNotificationMessagesInForgotPasswordPage()[pri:11, instance:Sanity.ForgotPasswordTest@1329eff] output={null}]]]>
               </value>
             </param>
           </params>

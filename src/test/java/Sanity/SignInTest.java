@@ -39,7 +39,7 @@ public class SignInTest extends BaseClass {
 		DashBoardPageEvent dbEvent = signInEvent.login(usertype);
 		dbEvent.VerifyNavigationToProfilePage();
 		MyProfilePageEvent myProfileEvent = new MyProfilePageEvent();
-		myProfileEvent.verifyLogedInUserType(usertype);
+		myProfileEvent.verifySignInUserType(usertype);
 	}
 	
 	@Test
@@ -51,7 +51,7 @@ public class SignInTest extends BaseClass {
 		DashBoardPageEvent dbEvent = signInEvent.login(usertype);
 		dbEvent.VerifyNavigationToProfilePage();
 		MyProfilePageEvent myProfileEvent = new MyProfilePageEvent();
-		myProfileEvent.verifyLogedInUserType(usertype);
+		myProfileEvent.verifySignInUserType(usertype);
 	}
 	
 	@Test
@@ -63,7 +63,7 @@ public class SignInTest extends BaseClass {
 		DashBoardPageEvent dbEvent = signInEvent.login(usertype);
 		dbEvent.VerifyNavigationToProfilePage();
 		MyProfilePageEvent myProfileEvent = new MyProfilePageEvent();
-		myProfileEvent.verifyLogedInUserType(usertype);
+		myProfileEvent.verifySignInUserType(usertype);
 	}
 	
 	@Test
@@ -75,7 +75,7 @@ public class SignInTest extends BaseClass {
 		DashBoardPageEvent dbEvent = signInEvent.login(usertype);
 		dbEvent.VerifyNavigationToProfilePage();
 		MyProfilePageEvent myProfileEvent = new MyProfilePageEvent();
-		myProfileEvent.verifyLogedInUserType(usertype);
+		myProfileEvent.verifySignInUserType(usertype);
 	}
 	
 	@Test
@@ -87,7 +87,7 @@ public class SignInTest extends BaseClass {
 		DashBoardPageEvent dbEvent = signInEvent.login(usertype);
 		dbEvent.VerifyNavigationToProfilePage();
 		MyProfilePageEvent myProfileEvent = new MyProfilePageEvent();
-		myProfileEvent.verifyLogedInUserType(usertype);
+		myProfileEvent.verifySignInUserType(usertype);
 	}
 	
 	@Test

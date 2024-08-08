@@ -24,6 +24,13 @@ public class GeneratePasswordEvent extends BaseClass{
 	GeneratePasswordPageObject gpObj = new GeneratePasswordPageObject();
 	ConfigurationData configData = new ConfigurationData();
 	
+	public GeneratePasswordEvent verifyNavigationToGeneratePassword(String link) {
+		driver.get(link);
+		WebElement actualPageHeader = gpObj.getElementGeneratePasswordPageHeader();
+		abstractC.verifyTextOfthWebEement(actualPageHeader, configData.ExpectedGeneratePasswordPageHeader);
+		return new GeneratePasswordEvent();
+	}
+	
 	public void verifyfieldValidationInGeneratePasswordField() {
 
 		abstractC.clickElement(gpObj.getElementSubmitBtn());
@@ -47,6 +54,14 @@ public class GeneratePasswordEvent extends BaseClass{
 		gpObj.getElementConfirmPassword().sendKeys(Keys.ENTER);
 		System.out.println("jk");
 		abstractC.verifyTextOfthWebEement(gpObj.getElementNotificationMsg(), configData.expectedOldPasswordErrorNotification);
+	}
+	
+	public void verifySuccessfulGeneratePassswordNotificaationMessagesInGeneratePasswordField() {
+		abstractC.enterData(gpObj.getElementPassword(),"Test@123");
+		gpObj.getElementPassword().sendKeys(Keys.ENTER);
+		abstractC.enterData(gpObj.getElementConfirmPassword(),"Test@123");
+		gpObj.getElementConfirmPassword().sendKeys(Keys.ENTER);
+		abstractC.verifyTextOfthWebEement(gpObj.getElementNotificationMsg(), configData.expectedSuccessfulGeneratePassswordNotification);
 	}
 	
 	public void verifySuccessfulResetPassswordNotificaationMessagesInGeneratePasswordField() {

@@ -19,9 +19,6 @@ public class SignUpPageEvent extends BaseClass{
 	HomePageObjects HMObjects = new HomePageObjects();
 	SignUpPageObject signUpPageObject = new SignUpPageObject();
 	ConfigurationData configData = new ConfigurationData();
-	Constants constant = new Constants();
-	Faker data = new Faker();
-	protected WebDriverWait wait;
 
 	public void validationOfSignUpPage() throws InterruptedException {
 		String firstName = "";
@@ -310,7 +307,7 @@ public class SignUpPageEvent extends BaseClass{
 	public void creationOfCompanyUsingAlreadyUsedPhoneNumber() {
 		String firstName = data.name().firstName();
 		String lastName = data.name().lastName();
-		String email = (firstName + lastName + constant.serverDomain).toLowerCase();
+		String email = (firstName + lastName + constant.serverDomain).replaceAll("'", "").toLowerCase();
 		String phoneNumber = "9108748776";
 		String password = "Test@123";
 		String confirmPassword = "Test@123";
@@ -423,7 +420,7 @@ public class SignUpPageEvent extends BaseClass{
 	public void validationUsingAlreadyExistingCompanyName() {
 		String firstName = data.name().firstName();
 		String lastName = data.name().lastName();
-		String email = (firstName + lastName + constant.serverDomain).toLowerCase();
+		String email = (firstName + lastName + constant.serverDomain).replaceAll("'", "").toLowerCase();
 		String phoneNumber = data.phoneNumber().phoneNumber();
 		String password = "Test@123";
 		String confirmPassword = "Test@123";
@@ -526,7 +523,7 @@ public class SignUpPageEvent extends BaseClass{
 	public void successfullyCreatingNewCustomer() throws InterruptedException {
 		String firstName = data.name().firstName();
 		String lastName = data.name().lastName();
-		String email = (firstName + lastName + constant.serverDomain).toLowerCase();
+		String email = (firstName + lastName + constant.serverDomain).replaceAll("'", "").toLowerCase();
 		System.out.println(email);
 		String phoneNumber = data.phoneNumber().phoneNumber();
 		String password = "Test@123";
@@ -568,7 +565,7 @@ public class SignUpPageEvent extends BaseClass{
 
 		String firstName = data.name().firstName();
 		String lastName = data.name().lastName();
-		String email = (firstName + lastName + constant.serverDomain).toLowerCase();
+		String email =(firstName + lastName + constant.serverDomain).replaceAll("'", "").toLowerCase();
 		String phoneNumber = data.phoneNumber().phoneNumber();
 		String password = "Test@123";
 		String confirmPassword = "Test@123";
@@ -620,7 +617,7 @@ public class SignUpPageEvent extends BaseClass{
 	public void validationUsingAlreadyExistingCIN_Number() {
 		String firstName = data.name().firstName();
 		String lastName = data.name().lastName();
-		String email = (firstName + lastName + constant.serverDomain).toLowerCase();
+		String email = (firstName + lastName + constant.serverDomain).replaceAll("'", "").toLowerCase();
 		String phoneNumber = data.phoneNumber().phoneNumber();
 		String password = "Test@123";
 		String confirmPassword = "Test@123";
@@ -668,7 +665,7 @@ public class SignUpPageEvent extends BaseClass{
 	public void validationUsingAlreadyExistingGSTIN_Number() {
 		String firstName = data.name().firstName();
 		String lastName = data.name().lastName();
-		String email = (firstName + lastName + constant.serverDomain).toLowerCase();
+		String email =(firstName + lastName + constant.serverDomain).replaceAll("'", "").toLowerCase();
 		String phoneNumber = data.phoneNumber().phoneNumber();
 		String password = "Test@123";
 		String confirmPassword = "Test@123";

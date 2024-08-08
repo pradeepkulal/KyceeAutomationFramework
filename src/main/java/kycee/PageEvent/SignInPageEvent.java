@@ -11,8 +11,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
-
 import kycee.Base.BaseClass;
 import kycee.PageObjects.DashBoardObject;
 import kycee.PageObjects.ForgotPasswordPageObject;
@@ -22,7 +20,6 @@ import kycee.PageObjects.SignUpPageObject;
 import kycee.Utills.AbstractComponents;
 import kycee.Utills.ConfigurationData;
 import kycee.Utills.Constants;
-import kycee.Utills.Xls_Reader;
 
 public class SignInPageEvent extends BaseClass {
 
@@ -33,8 +30,7 @@ public class SignInPageEvent extends BaseClass {
 	DashBoardObject dbObjct = new DashBoardObject();
 	ForgotPasswordPageObject forgotPasswordObj = new ForgotPasswordPageObject();
 	ConfigurationData configData = new ConfigurationData();
-	Constants constant = new Constants();
-	
+
 	protected WebDriverWait wait;
 
 	public void login() throws IOException {
@@ -182,52 +178,71 @@ public class SignInPageEvent extends BaseClass {
 		}
 
 		if (!handled) {
-			
+
 			System.out.println("Error Message is not handled");
 			Assert.assertTrue(false, "Unhandled notification: " + errorNotificationMessage);
 		}
 	}
-	
+
 	public DashBoardPageEvent login(String user) {
 		String User = user.toLowerCase();
 		String email = "";
 		String password = "";
 		switch (User) {
 		case "customer":
-			 email = testDataXL.getCellData("Sheet1", "Email", 2);
-			 password = testDataXL.getCellData("Sheet1", "Password", 2);
+			email = testDataXL.getCellData("Sheet1", "Email", 2);
+			password = testDataXL.getCellData("Sheet1", "Password", 2);
+			break;
+		case "new customer":
+			email = testDataXL.getCellData("Sheet1", "Email", 7);
+			password = testDataXL.getCellData("Sheet1", "Password", 7);
 			break;
 		case "business user":
-			 email = testDataXL.getCellData("Sheet1", "Email", 3); 
-			 password = testDataXL.getCellData("Sheet1", "Password", 3);
+			email = testDataXL.getCellData("Sheet1", "Email", 3); 
+			password = testDataXL.getCellData("Sheet1", "Password", 3);
+			break;
+			
+		case "new business user":
+			email = testDataXL.getCellData("Sheet1", "Email", 9); 
+			password = testDataXL.getCellData("Sheet1", "Password", 9);
 			break;
 		case "business admin":
-			 email = testDataXL.getCellData("Sheet1", "Email", 4);
-			 password = testDataXL.getCellData("Sheet1", "Password", 4);
+			email = testDataXL.getCellData("Sheet1", "Email", 4);
+			password = testDataXL.getCellData("Sheet1", "Password", 4);
 			break;
 		case "super admin":
-			 email = testDataXL.getCellData("Sheet1", "Email", 5);
-			 password = testDataXL.getCellData("Sheet1", "Password", 5);
+			email = testDataXL.getCellData("Sheet1", "Email", 5);
+			password = testDataXL.getCellData("Sheet1", "Password", 5);
 			break;
 		case "blogger":
-			 email = testDataXL.getCellData("Sheet1", "Email", 6);
-			 password = testDataXL.getCellData("Sheet1", "Password", 6);
+			email = testDataXL.getCellData("Sheet1", "Email", 6);
+			password = testDataXL.getCellData("Sheet1", "Password", 6);
 			break;
 		default:
 			System.out.println(User + " is not available in the sheet");
 			break;
 		}
-		
+
 		abstractC.enterData(signInPageObject.getElementUserEmailInput(), email);
 		abstractC.enterData(signInPageObject.getElementUserPasswordInput(), password);
 		abstractC.clickElement(signInPageObject.getElementSubmitBtn());
 		System.out.println(User + " is Successfully Logged In");
-		if (abstractC.isElementDisplayed(dbObjct.getElementDashBoardPageHeader())) {
-			abstractC.verifyTextOfthWebEement(dbObjct.getElementDashBoardPageHeader(), configData.expectedDashBoardHeader);
+		if (User.equals("blogger")) {
+			if (abstractC.isElementDisplayed(dbObjct.getElementDashBoardPageHeader())) {
+				abstractC.verifyTextOfthWebEement(dbObjct.getElementDashBoardPageHeader(), configData.expectedBlogsPageHeader);
+			}else {
+				Assert.assertTrue(false,User + " Log In Failed");
+			}
+			return new DashBoardPageEvent();
 		}else {
-			Assert.assertTrue(false,User + " Log In Failed");
+			if (abstractC.isElementDisplayed(dbObjct.getElementDashBoardPageHeader())) {
+				abstractC.verifyTextOfthWebEement(dbObjct.getElementDashBoardPageHeader(), configData.expectedDashBoardHeader);
+			}else {
+				Assert.assertTrue(false,User + " Log In Failed");
+			}
+			return new DashBoardPageEvent();
 		}
-		return new DashBoardPageEvent();
+		
 	}
 
 	public DashBoardPageEvent loginWith(String email, String password) {
@@ -239,16 +254,24 @@ public class SignInPageEvent extends BaseClass {
 		abstractC.waitForSeconds(5);
 		return new DashBoardPageEvent();		
 	}
-	
+
 	public ForgotPasswordPageEvent verifyNavigationToForgotPasswordPage() {
 		abstractC.clickElement(signInPageObject.getElementForgotPasswordLink());
 		WebElement forgotPasswordHeader = forgotPasswordObj.getElementForgotPasswordPageHeader();
-			if (abstractC.isElementDisplayed(forgotPasswordHeader)) {
+		if (abstractC.isElementDisplayed(forgotPasswordHeader)) {
 			abstractC.verifyTextOfthWebEement(forgotPasswordHeader, configData.forgotPasswordHeaderText);
 		} else {
 			Assert.assertFalse(true);
 		}
 		return new ForgotPasswordPageEvent();		
+	}
+
+	public void loginWithErrorotifications(String email, String password,String expectedErrorNtifications) {
+		abstractC.waitForSeconds(5);
+		abstractC.enterData(signInPageObject.getElementUserEmailInput(), email);
+		abstractC.enterData(signInPageObject.getElementUserPasswordInput(), password);
+		abstractC.clickElement(signInPageObject.getElementSubmitBtn());
+		abstractC.verifyTextOfthWebEement(signInPageObject.getElementNotificationMsg(), expectedErrorNtifications);
 	}
 
 }

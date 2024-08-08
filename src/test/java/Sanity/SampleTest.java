@@ -13,17 +13,23 @@ import kycee.PageEvent.ActivateAccountPageEvent;
 import kycee.PageEvent.DashBoardPageEvent;
 import kycee.PageEvent.ForgotPasswordPageEvent;
 import kycee.PageEvent.HomePageEvent;
+import kycee.PageEvent.MyProfilePageEvent;
 import kycee.PageEvent.SignInPageEvent;
 import kycee.PageEvent.SignUpPageEvent;
+import kycee.Utills.ConfigurationData;
 import listeners.Retryanalyzer;
 
 public class SampleTest extends BaseClass{
-	@Test
-	public void notificationMessageInForgotPasswordPageTest() throws InterruptedException, IOException {
-		String email =	testDataXL.getCellData("sheet1", "Email", 7);
+	@Test(priority = 0)
+	public void verifyUsingBloggerLogin() throws InterruptedException, IOException {
+		String usertype = "Business Admin";
 		HomePageEvent HMEvent = new HomePageEvent();
-		SignUpPageEvent singUpEvent = HMEvent.validateSignUpButton();
-		singUpEvent.successfullyCreatingNewCustomer();
+		HMEvent.validateSignInButton();
+		SignInPageEvent signInEvent = new SignInPageEvent();
+		DashBoardPageEvent dbEvent = signInEvent.login(usertype);
+		dbEvent.VerifyNavigationToProfilePage();
+		MyProfilePageEvent myProfileEvent = new MyProfilePageEvent();
+		myProfileEvent.verifySignInUserType(usertype);
 	}
-
+	
 }

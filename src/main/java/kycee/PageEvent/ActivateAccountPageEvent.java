@@ -46,7 +46,7 @@ public class ActivateAccountPageEvent extends BaseClass{
 
 	public void verifyActivateAccountButton() {
 		WebElement activateAcoountButton = activatAccountObject.getElementActivateAccountBtn();
-		if(abstractC.isElementClickable(activateAcoountButton, Duration.ofSeconds(20))) {
+		if(abstractC.isElementClickable(activateAcoountButton)) {
 			System.out.println("Activate Account Button is clickable");
 		}else {
 			Logger.fail("Activate Account Button is Not clickable");
@@ -101,7 +101,7 @@ public class ActivateAccountPageEvent extends BaseClass{
 
 	public void verifyResendOTPButton(String email) {
 		WebElement resendOtpButton = activatAccountObject.getElementResendOTP();
-		if (abstractC.isElementClickable(resendOtpButton, Duration.ofSeconds(30))) {
+		if (abstractC.isElementClickable(resendOtpButton)) {
 			System.out.println("Resend OTP button is clickable");
 		}else {
 			Logger.error("Resend OTP button is clickable");

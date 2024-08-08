@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Suite" class="navigator-link">
+              <span class="suite-name border-failed">Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
+                    <span>C:\Users\Intuitiveapps\eclipse-workspace\Kyce\testSuites\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Suite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">13 methods, 1 failed,   12 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Sanity.ForgotPasswordTest" class="method navigator-link" hash-for-method="verifyResetPasswordUsingExpiredLink">verifyResetPasswordUsingExpiredLink</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Sanity.ForgotPasswordTest" class="method navigator-link" hash-for-method="emailFieldErrorMessageInForgotPasswordPageTest">emailFieldErrorMessageInForgotPasswordPageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Sanity.AddUserPageTest" class="method navigator-link" hash-for-method="fieldValidationTestInGeneratePasswordPage">fieldValidationTestInGeneratePasswordPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Sanity.AddUserPageTest" class="method navigator-link" hash-for-method="succeffullyCreatingNewUserTest">succeffullyCreatingNewUserTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Sanity.ForgotPasswordTest" class="method navigator-link" hash-for-method="verifyFieldErrorMessageInResetPasswordPageTest">verifyFieldErrorMessageInResetPasswordPageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Sanity.ForgotPasswordTest" class="method navigator-link" hash-for-method="verifyInvalidEmailIDErrorNotificationMessagesInForgotPasswordPage">verifyInvalidEmailIDErrorNotificationMessagesInForgotPasswordPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Sanity.ForgotPasswordTest" class="method navigator-link" hash-for-method="verifyMaximumAttemptsErrorNotificationMessagesInForgotPasswordPage">verifyMaximumAttemptsErrorNotificationMessagesInForgotPasswordPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Sanity.ForgotPasswordTest" class="method navigator-link" hash-for-method="verifyNavigationToSignInPageFromForgotPasswordPage">verifyNavigationToSignInPageFromForgotPasswordPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Sanity.ForgotPasswordTest" class="method navigator-link" hash-for-method="verifyNavigationToSignUpPageFromForgotPasswordPage">verifyNavigationToSignUpPageFromForgotPasswordPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Sanity.ForgotPasswordTest" class="method navigator-link" hash-for-method="verifyOldPasswordErrorNotificaationMessagesInResetPasswordField">verifyOldPasswordErrorNotificaationMessagesInResetPasswordField</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Sanity.ForgotPasswordTest" class="method navigator-link" hash-for-method="verifyResetPasswordUsingExpiredLinkAfterResetingPasswordSuccessfuly">verifyResetPasswordUsingExpiredLinkAfterResetingPasswordSuccessfuly</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Sanity.ForgotPasswordTest" class="method navigator-link" hash-for-method="verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink">verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Sanity.ForgotPasswordTest" class="method navigator-link" hash-for-method="verifyTimeDiffrenceBetweenResetPasswordNotificationMessagesInForgotPasswordPage">verifyTimeDiffrenceBetweenResetPasswordNotificationMessagesInForgotPasswordPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">Sanity.ForgotPasswordTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyResetPasswordUsingExpiredLink">
+                  </a> <!-- verifyResetPasswordUsingExpiredLink -->
+                  <span class="method-name">verifyResetPasswordUsingExpiredLink</span>
+                  <div class="stack-trace">java.lang.AssertionError: Link is not expired expected [true] but found [false]
+	at kycee.PageEvent.GeneratePasswordEvent.verifyExpiredGeneratePasswordPageLink(GeneratePasswordEvent.java:83)
+	at Sanity.ForgotPasswordTest.verifyResetPasswordUsingExpiredLink(ForgotPasswordTest.java:72)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">Sanity.AddUserPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="fieldValidationTestInGeneratePasswordPage">
+                  </a> <!-- fieldValidationTestInGeneratePasswordPage -->
+                  <span class="method-name">fieldValidationTestInGeneratePasswordPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="succeffullyCreatingNewUserTest">
+                  </a> <!-- succeffullyCreatingNewUserTest -->
+                  <span class="method-name">succeffullyCreatingNewUserTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">Sanity.ForgotPasswordTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="emailFieldErrorMessageInForgotPasswordPageTest">
+                  </a> <!-- emailFieldErrorMessageInForgotPasswordPageTest -->
+                  <span class="method-name">emailFieldErrorMessageInForgotPasswordPageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyFieldErrorMessageInResetPasswordPageTest">
+                  </a> <!-- verifyFieldErrorMessageInResetPasswordPageTest -->
+                  <span class="method-name">verifyFieldErrorMessageInResetPasswordPageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyInvalidEmailIDErrorNotificationMessagesInForgotPasswordPage">
+                  </a> <!-- verifyInvalidEmailIDErrorNotificationMessagesInForgotPasswordPage -->
+                  <span class="method-name">verifyInvalidEmailIDErrorNotificationMessagesInForgotPasswordPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyMaximumAttemptsErrorNotificationMessagesInForgotPasswordPage">
+                  </a> <!-- verifyMaximumAttemptsErrorNotificationMessagesInForgotPasswordPage -->
+                  <span class="method-name">verifyMaximumAttemptsErrorNotificationMessagesInForgotPasswordPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyNavigationToSignInPageFromForgotPasswordPage">
+                  </a> <!-- verifyNavigationToSignInPageFromForgotPasswordPage -->
+                  <span class="method-name">verifyNavigationToSignInPageFromForgotPasswordPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyNavigationToSignUpPageFromForgotPasswordPage">
+                  </a> <!-- verifyNavigationToSignUpPageFromForgotPasswordPage -->
+                  <span class="method-name">verifyNavigationToSignUpPageFromForgotPasswordPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyOldPasswordErrorNotificaationMessagesInResetPasswordField">
+                  </a> <!-- verifyOldPasswordErrorNotificaationMessagesInResetPasswordField -->
+                  <span class="method-name">verifyOldPasswordErrorNotificaationMessagesInResetPasswordField</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyResetPasswordUsingExpiredLinkAfterResetingPasswordSuccessfuly">
+                  </a> <!-- verifyResetPasswordUsingExpiredLinkAfterResetingPasswordSuccessfuly -->
+                  <span class="method-name">verifyResetPasswordUsingExpiredLinkAfterResetingPasswordSuccessfuly</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink">
+                  </a> <!-- verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink -->
+                  <span class="method-name">verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyTimeDiffrenceBetweenResetPasswordNotificationMessagesInForgotPasswordPage">
+                  </a> <!-- verifyTimeDiffrenceBetweenResetPasswordNotificationMessagesInForgotPasswordPage -->
+                  <span class="method-name">verifyTimeDiffrenceBetweenResetPasswordNotificationMessagesInForgotPasswordPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+        </div> <!-- panel Suite -->
+        <div panel-name="test-xml-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\Intuitiveapps\eclipse-workspace\Kyce\testSuites\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot; verbose=&quot;0&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;Sanity.AddUserPageTest&quot;/&gt;
+      &lt;class name=&quot;Sanity.ForgotPasswordTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test --&gt;
+&lt;/suite&gt; &lt;!-- Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Test (2 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Suite');
+function tableData_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(13);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'verifyTimeDiffrenceBetweenResetPasswordNotificationMessagesInForgotPasswordPage')
+data.setCell(0, 2, 'Sanity.ForgotPasswordTest')
+data.setCell(0, 3, 375345);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'verifyResetPasswordUsingExpiredLink')
+data.setCell(1, 2, 'Sanity.ForgotPasswordTest')
+data.setCell(1, 3, 188099);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'succeffullyCreatingNewUserTest')
+data.setCell(2, 2, 'Sanity.AddUserPageTest')
+data.setCell(2, 3, 91873);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'fieldValidationTestInGeneratePasswordPage')
+data.setCell(3, 2, 'Sanity.AddUserPageTest')
+data.setCell(3, 3, 66260);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink')
+data.setCell(4, 2, 'Sanity.ForgotPasswordTest')
+data.setCell(4, 3, 46023);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'verifyMaximumAttemptsErrorNotificationMessagesInForgotPasswordPage')
+data.setCell(5, 2, 'Sanity.ForgotPasswordTest')
+data.setCell(5, 3, 31370);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'verifyFieldErrorMessageInResetPasswordPageTest')
+data.setCell(6, 2, 'Sanity.ForgotPasswordTest')
+data.setCell(6, 3, 22771);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'emailFieldErrorMessageInForgotPasswordPageTest')
+data.setCell(7, 2, 'Sanity.ForgotPasswordTest')
+data.setCell(7, 3, 20890);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'verifyNavigationToSignInPageFromForgotPasswordPage')
+data.setCell(8, 2, 'Sanity.ForgotPasswordTest')
+data.setCell(8, 3, 18558);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'verifyInvalidEmailIDErrorNotificationMessagesInForgotPasswordPage')
+data.setCell(9, 2, 'Sanity.ForgotPasswordTest')
+data.setCell(9, 3, 16458);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'verifyNavigationToSignUpPageFromForgotPasswordPage')
+data.setCell(10, 2, 'Sanity.ForgotPasswordTest')
+data.setCell(10, 3, 15840);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'verifyOldPasswordErrorNotificaationMessagesInResetPasswordField')
+data.setCell(11, 2, 'Sanity.ForgotPasswordTest')
+data.setCell(11, 3, 13303);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'verifyResetPasswordUsingExpiredLinkAfterResetingPasswordSuccessfuly')
+data.setCell(12, 2, 'Sanity.ForgotPasswordTest')
+data.setCell(12, 3, 11221);
+window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 15 minutes</span>
+              <div id="times-div-Suite">
+              </div> <!-- times-div-Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">2 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">Sanity.ForgotPasswordTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">afterTest</span>
+                <br/>
+                <span class="ignored-method-name">beforeTestMethod</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">Sanity.AddUserPageTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">beforeTestMethod</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethodMethod(chrome, public void Sanity.AddUserPageTest.succeffullyCreatingNewUserTest() throws java.lang.Interru...)</span>
+                <span class="method-start">999 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">succeffullyCreatingNewUserTest</span>
+                <span class="method-start">9254 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=succeffullyCreatingNewUserTest status=SUCCESS method=AddUserPageTest.succeffullyCre...)</span>
+                <span class="method-start">101129 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethodMethod(chrome, public void Sanity.AddUserPageTest.fieldValidationTestInGeneratePasswordPage() throws java.l...)</span>
+                <span class="method-start">101333 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">fieldValidationTestInGeneratePasswordPage</span>
+                <span class="method-start">106421 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=fieldValidationTestInGeneratePasswordPage status=SUCCESS method=AddUserPageTest.fie...)</span>
+                <span class="method-start">172689 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">Sanity.ForgotPasswordTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethodMethod(chrome, public void Sanity.ForgotPasswordTest.emailFieldErrorMessageInForgotPasswordPageTest() throw...)</span>
+                <span class="method-start">172869 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">emailFieldErrorMessageInForgotPasswordPageTest</span>
+                <span class="method-start">181362 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=emailFieldErrorMessageInForgotPasswordPageTest status=SUCCESS method=ForgotPassword...)</span>
+                <span class="method-start">202252 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethodMethod(chrome, public void Sanity.ForgotPasswordTest.verifyNavigationToSignInPageFromForgotPasswordPage() t...)</span>
+                <span class="method-start">202431 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyNavigationToSignInPageFromForgotPasswordPage</span>
+                <span class="method-start">210714 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=verifyNavigationToSignInPageFromForgotPasswordPage status=SUCCESS method=ForgotPass...)</span>
+                <span class="method-start">229272 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethodMethod(chrome, public void Sanity.ForgotPasswordTest.verifyNavigationToSignUpPageFromForgotPasswordPage() t...)</span>
+                <span class="method-start">229583 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyNavigationToSignUpPageFromForgotPasswordPage</span>
+                <span class="method-start">240224 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=verifyNavigationToSignUpPageFromForgotPasswordPage status=SUCCESS method=ForgotPass...)</span>
+                <span class="method-start">256064 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethodMethod(chrome, public void Sanity.ForgotPasswordTest.verifyInvalidEmailIDErrorNotificationMessagesInForgotP...)</span>
+                <span class="method-start">256189 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyInvalidEmailIDErrorNotificationMessagesInForgotPasswordPage</span>
+                <span class="method-start">262763 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=verifyInvalidEmailIDErrorNotificationMessagesInForgotPasswordPage status=SUCCESS me...)</span>
+                <span class="method-start">279221 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethodMethod(chrome, public void Sanity.ForgotPasswordTest.verifyTimeDiffrenceBetweenResetPasswordNotificationMes...)</span>
+                <span class="method-start">279349 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyTimeDiffrenceBetweenResetPasswordNotificationMessagesInForgotPasswordPage</span>
+                <span class="method-start">308884 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=verifyTimeDiffrenceBetweenResetPasswordNotificationMessagesInForgotPasswordPage sta...)</span>
+                <span class="method-start">684229 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethodMethod(chrome, public void Sanity.ForgotPasswordTest.verifyResetPasswordUsingExpiredLink() throws java.lang...)</span>
+                <span class="method-start">684476 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyResetPasswordUsingExpiredLink</span>
+                <span class="method-start">691524 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=verifyResetPasswordUsingExpiredLink status=FAILURE method=ForgotPasswordTest.verify...)</span>
+                <span class="method-start">879623 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethodMethod(chrome, public void Sanity.ForgotPasswordTest.verifyFieldErrorMessageInResetPasswordPageTest() throw...)</span>
+                <span class="method-start">879983 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyFieldErrorMessageInResetPasswordPageTest</span>
+                <span class="method-start">890953 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=verifyFieldErrorMessageInResetPasswordPageTest status=SUCCESS method=ForgotPassword...)</span>
+                <span class="method-start">913724 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethodMethod(chrome, public void Sanity.ForgotPasswordTest.verifyOldPasswordErrorNotificaationMessagesInResetPass...)</span>
+                <span class="method-start">913912 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyOldPasswordErrorNotificaationMessagesInResetPasswordField</span>
+                <span class="method-start">920243 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=verifyOldPasswordErrorNotificaationMessagesInResetPasswordField status=SUCCESS meth...)</span>
+                <span class="method-start">933546 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethodMethod(chrome, public void Sanity.ForgotPasswordTest.verifySuccessNotificationMessageInResetPasswordPageTes...)</span>
+                <span class="method-start">933725 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink</span>
+                <span class="method-start">938951 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=verifySuccessNotificationMessageInResetPasswordPageTestUsingNewLink status=SUCCESS ...)</span>
+                <span class="method-start">984974 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethodMethod(chrome, public void Sanity.ForgotPasswordTest.verifyResetPasswordUsingExpiredLinkAfterResetingPasswo...)</span>
+                <span class="method-start">985164 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyResetPasswordUsingExpiredLinkAfterResetingPasswordSuccessfuly</span>
+                <span class="method-start">990418 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=verifyResetPasswordUsingExpiredLinkAfterResetingPasswordSuccessfuly status=SUCCESS ...)</span>
+                <span class="method-start">1001639 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethodMethod(chrome, public void Sanity.ForgotPasswordTest.verifyMaximumAttemptsErrorNotificationMessagesInForgot...)</span>
+                <span class="method-start">1001784 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyMaximumAttemptsErrorNotificationMessagesInForgotPasswordPage</span>
+                <span class="method-start">1007973 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=verifyMaximumAttemptsErrorNotificationMessagesInForgotPasswordPage status=SUCCESS m...)</span>
+                <span class="method-start">1039343 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">Sanity.AddUserPageTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test after">
+                <span class="method-name">afterTest</span>
+                <span class="method-start">1039523 ms</span>
+              </div> <!-- configuration-test after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

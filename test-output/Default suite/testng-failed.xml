@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Sanity.SampleTest">
+      <class name="Sanity.WalletPageTest">
         <methods>
-          <include name="signInPageErrorValidationTest"/>
+          <include name="verifyAddCretitsFunctionality"/>
           <include name="afterMethod"/>
           <include name="beforeTestMethod"/>
           <include name="beforeMethodMethod"/>
           <include name="afterTest"/>
         </methods>
-      </class> <!-- Sanity.SampleTest -->
+      </class> <!-- Sanity.WalletPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

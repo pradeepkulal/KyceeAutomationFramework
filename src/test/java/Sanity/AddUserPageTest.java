@@ -22,13 +22,13 @@ public class AddUserPageTest   extends BaseClass{
 
 		String firstName = data.name().firstName();
 		String lastName = data.name().lastName();
-		String email = firstName + lastName +  constant.serverDomain;
+		String email = (firstName + lastName +  constant.serverDomain).toLowerCase();
 		//"@yopmail.com";
 		String phoneNumber = data.phoneNumber().phoneNumber();
 		String userType ="User";
 		String verificationCount ="0";
-		String adminEmail =	testDataXL.getCellData("sheet1", "Email", 8);
-		String adminPassword = testDataXL.getCellData("sheet1", "Password", 8);
+		String adminEmail =	testDataXL.getCellData(constant.credentialsSheet, constant.emailCol, 8);
+		String adminPassword = testDataXL.getCellData(constant.credentialsSheet, constant.passwordCol, 8);
 		HomePageEvent hmEvnt = new HomePageEvent();
 		SignInPageEvent signInEvnt = hmEvnt.validateSignInButton();
 		DashBoardPageEvent dbEvnt= signInEvnt.loginWith(adminEmail,adminPassword);
@@ -44,25 +44,26 @@ public class AddUserPageTest   extends BaseClass{
 		if (updatedUserCount == initialUserCount + 1) {
 			System.out.println("User count increased exactly by 1.");
 		} else {
-			
+
 			System.out.println("Test Case Failed: User count did not increase by exactly 1.");
 			Assert.assertTrue(false, "User Count is not increased by 1 count");
 		}
-		testDataXL.setCellData(constant.credentialsSheet, "Email", 9,email);
+		testDataXL.setCellData(constant.credentialsSheet, constant.emailCol, 9,email);
 	}
 
-	@Test(enabled = false, dependsOnMethods = {"succeffullyCreatingNewUserTest"})
+	@Test(priority = 1, dependsOnMethods = {"succeffullyCreatingNewUserTest"})
 	public void fieldValidationTestInGeneratePasswordPage() throws InterruptedException, IOException, MailosaurException {
-		String email =	testDataXL.getCellData(constant.credentialsSheet,"Email",9);
+		String email =	testDataXL.getCellData(constant.credentialsSheet,constant.emailCol,9);
 		String link ="";
 		try {
 			link=emailReader.getGeneratePasswordLinkFromEmail(email);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
-	ForgotPasswordPageEvent fpEvent = new ForgotPasswordPageEvent();
-	fpEvent.verifyNavigationToGeneratePassword(link);
-	
-	
-}
+		GeneratePasswordEvent gpEvent = new GeneratePasswordEvent();
+		gpEvent.verifyNavigationToGeneratePassword(link);
+		gpEvent.verifyfieldValidationInGeneratePasswordField();
+		gpEvent.verifySuccessfulGeneratePassswordNotificaationMessagesInGeneratePasswordField();
+		testDataXL.setCellData(constant.credentialsSheet, constant.passwordCol, 9, "Test@123");
+	}
 }

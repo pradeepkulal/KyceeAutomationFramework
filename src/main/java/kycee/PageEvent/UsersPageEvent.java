@@ -29,6 +29,7 @@ public class UsersPageEvent extends BaseClass{
 	ConfigurationData configData = new ConfigurationData();
 	
 	public AddUsersPageEvent verifyNavigationToAddUsersPage() {
+		abstractC.waitForElementVisibility(driver, usersObj.getElementAddUsersBtn(),30);
 		abstractC.clickElement(usersObj.getElementAddUsersBtn());
 		abstractC.waitForSeconds(2);
 		WebElement actualPageHeader = addUserObj.getElemenAddUsersPageHeader();

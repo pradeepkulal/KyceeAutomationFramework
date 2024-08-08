@@ -1,19 +1,14 @@
 package kycee.PageEvent;
 
-import java.io.File;
-import java.io.IOException;
-import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import kycee.Base.BaseClass;
 import kycee.PageObjects.HomePageObjects;
-import kycee.PageObjects.SignInPageObject;
 import kycee.Utills.AbstractComponents;
 import kycee.Utills.ConfigurationData;
 
@@ -29,7 +24,7 @@ public class HomePageEvent extends BaseClass{
 
 	public  void validateDomainsButton() {
 		WebElement DomainsTabButton = HMObjects.domainsTabButtonValidation();
-		abstractC.isElementClickable(DomainsTabButton, Duration.ofSeconds(10));
+		abstractC.isElementClickable(DomainsTabButton);
 		Logger.info("Element is clickable");
 		//Logger.info("The Button is clickable");
 		abstractC.clickElement(DomainsTabButton);
@@ -59,7 +54,7 @@ public class HomePageEvent extends BaseClass{
 			System.out.println("After Mouse Hover Domain button Color is not Proper");
 		}
 		// Verify whether element is clickable or not
-		if (abstractC.isElementClickable(DomainsTabButton, Duration.ofSeconds(10))) {
+		if (abstractC.isElementClickable(DomainsTabButton )) {
 			Assert.assertTrue(true,"Domains Tab Button is Clickable");	
 		}else {
 			Assert.assertTrue(false,"Domains Tab Button is Clickable");
@@ -227,7 +222,7 @@ public class HomePageEvent extends BaseClass{
 		else {
 			System.out.println("User is Not Navigated to Why KYCEE Section");
 		}
-		
+
 
 		List<WebElement> WhyKYCEESectionButtonElements = HMObjects.WhyKYCEESectionButtonElements();
 		for (WebElement webElement : WhyKYCEESectionButtonElements) {
@@ -245,8 +240,8 @@ public class HomePageEvent extends BaseClass{
 		else {
 			System.out.println("Challenges Section Button are Not Proper"); 
 		} 
-		
-	
+
+
 
 	}
 
@@ -278,7 +273,7 @@ public class HomePageEvent extends BaseClass{
 		abstractC.clickElement(aboutUsTabButton);
 		WebElement aboutUsSection = HMObjects.getAboutUsSectionTitleElement();
 		Assert.assertTrue(aboutUsSection.isDisplayed(), "About Us Section is displayed");
-		
+
 		String actualAboutUsButtonText = aboutUsSection.getText();
 		Assert.assertEquals(actualAboutUsButtonText, configData.About_Us_Button_text);
 	}
@@ -297,14 +292,12 @@ public class HomePageEvent extends BaseClass{
 		else {
 			System.out.println("Footer Titles Text are Not Proper"); 
 		} 
-
 	}
-	
-	public SignInPageEvent validateSignInButton() throws IOException {
+
+	public SignInPageEvent validateSignInButton() {
 		WebElement signInButton = HMObjects.getSignInButtonElement();
-		abstractC.verifyColorOfTheElement(signInButton, configData.expectedDarkBlueColor);
-		if (abstractC.isElementClickable(signInButton, Duration.ofSeconds(10))) {
-			
+		abstractC.verifyBackGroundColorOfTheElement(signInButton, configData.expectedDarkBlueColor);
+		if (abstractC.isElementClickable(signInButton)) {
 			Assert.assertTrue(true); 
 			System.out.println("Sign in button is clickable");
 		}else {
@@ -312,30 +305,26 @@ public class HomePageEvent extends BaseClass{
 		}
 		AbstractComponents.clickElement(signInButton);
 		WebElement signInButtonBlue = HMObjects.getSignInTextElement();
-//		String filePath1 = System.getProperty("user.dir")+ "//ScreenShots//" + signInButtonBlue.getText() + ".png";
-//		AbstractComponents.takeScreenShot(signInButtonBlue, filePath1);
-		
 		if (abstractC.isElementDisplayed(signInButtonBlue)) {
 			System.out.println("Successfully navigated to SignIn Page");
 			Assert.assertTrue(true);
 		}else { 
 			System.out.println("Error in Navigation to SignIn page");
 		}
-		 
+
 		return new SignInPageEvent();
 	}
-	
+
 	public SignUpPageEvent validateSignUpButton() {
 		WebElement signUpButton = HMObjects.getSignUpButtonElement();
-		abstractC.verifyColorOfTheElement(signUpButton, configData.expectedDarkBlueColor);
-		if (abstractC.isElementClickable(signUpButton, Duration.ofSeconds(10))) {
+		abstractC.verifyBackGroundColorOfTheElement(signUpButton, configData.expectedDarkBlueColor);		if (abstractC.isElementClickable(signUpButton)) {
 			Assert.assertTrue(true);
 			System.out.println("Sign Up button is clickable");
 		}else {
 			Logger.info("Sign Up Button is not Clickable");
 		}
 		abstractC.clickElement(signUpButton);
-		
+
 		WebElement signUpText =  HMObjects.getSignUpTextElement();
 		if (abstractC.isElementDisplayed(signUpText)) { 
 			System.out.println("Successfully navigated to SignUp Page");
@@ -344,9 +333,5 @@ public class HomePageEvent extends BaseClass{
 			System.out.println("Error in Navigation to SignUp page");
 		}
 		return new SignUpPageEvent();
-		
 	}
-
-
-
 }

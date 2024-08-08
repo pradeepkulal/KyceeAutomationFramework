@@ -128,4 +128,24 @@ public class DashBoardObject extends BaseClass {
 	public WebElement getElementLogOut() {
 		return driver.findElement(By.xpath(constant.Logout));
 	} 
+	
+	public WebElement getElementTourSkipBtn() {
+		return driver.findElement(By.xpath(constant.Logout));
+	} 
+	
+	public WebElement getElementTourNextBtn() {
+		return driver.findElement(By.xpath(constant.tourNextBtn));
+	} 
+	
+	public WebElement getElementTourPreviousBtn() {
+		return driver.findElement(By.xpath(constant.tourPreviousBtn));
+	} 
+	
+	public WebElement getElementTourDoneBtn() {
+		return driver.findElement(By.xpath(constant.tourDoneBtn));
+	} 
+
+	public WebElement getElementTourTitle() {
+		return driver.findElement(By.xpath(constant.tourTitle));
+	} 
 }

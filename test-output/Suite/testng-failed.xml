@@ -9,8 +9,8 @@
           <include name="verifyResetPasswordUsingExpiredLink"/>
           <include name="afterMethod"/>
           <include name="beforeTestMethod"/>
-          <include name="afterTest"/>
           <include name="beforeMethodMethod"/>
+          <include name="afterTest"/>
         </methods>
       </class> <!-- Sanity.ForgotPasswordTest -->
     </classes>

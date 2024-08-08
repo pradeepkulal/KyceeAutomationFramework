@@ -7,10 +7,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
+import com.mongodb.DB;
+
 import kycee.Base.BaseClass;
+import kycee.PageObjects.ChangePasswordObjects;
 import kycee.PageObjects.DashBoardObject;
 import kycee.PageObjects.HomePageObjects;
 import kycee.PageObjects.MyProfilePageObject;
+import kycee.PageObjects.ReviewPageObject;
 import kycee.PageObjects.SignInPageObject;
 import kycee.PageObjects.UsersPageObject;
 import kycee.PageObjects.VerificationPageObject;
@@ -25,86 +29,45 @@ public class DashBoardPageEvent extends BaseClass{
 	DashBoardObject DBObjects = new DashBoardObject();
 	MyProfilePageObject myProfileObject = new MyProfilePageObject();
 	VerificationPageObject verificationPageObject = new VerificationPageObject();
+	ChangePasswordObjects  cpObject = new ChangePasswordObjects();
+	ReviewPageObject rpObjct = new ReviewPageObject();
 	UsersPageObject usersObj = new UsersPageObject();
 	ConfigurationData configData = new ConfigurationData();
 	//	protected WebDriverWait wait;  
 
 	public void verifyVerificationsCard() throws InterruptedException {
-		abstractC.waitForElementToDisappear(driver, DBObjects.getElementLoader());
 		WebElement verificationCard = abstractC.waitForElementVisibility(driver, DBObjects.getElementVerificationsCard(),10);
-		String actualBeforecolour = abstractC.getColorOfWebElement("background-color",verificationCard);
-		softAssert.assertEquals(actualBeforecolour,configData.expectedBeforeCardColor);
-		if (actualBeforecolour.equals(configData.expectedBeforeCardColor)) {
-			System.out.println("Before Mouse Hover Verifications Card Color is Proper");
-		} else {
-			Logger.error("Before Mouse Hover  Verifications Card Color is not Proper");
-			System.out.println("Before Mouse Hover  Verifications Card Color is not Proper");
-		}
-		abstractC.moveCursorToWebElement(verificationCard, 20);
-		String actuaAfterMouseHoverColor = abstractC.getColorOfWebElement("background-color",verificationCard);
-		softAssert.assertEquals(actuaAfterMouseHoverColor,configData.expectedAfterCardColor);
+		abstractC.verifyBackGroundColorOfTheElement(verificationCard, configData.expectedWhiteColor);
+		abstractC.moveCursorToWebElement(verificationCard, 30);
+		abstractC.verifyBackGroundColorOfTheElement(verificationCard, configData.expectedSlateGrayColor);
 
-		if (actuaAfterMouseHoverColor.equals(configData.expectedAfterCardColor)) {
-			System.out.println("After Mouse Hover Verifications Card Color is Proper");
-		} else {
-			Logger.error("After Mouse Hover  Verifications Card Color is not Proper");
-			System.out.println("After Mouse Hover  Verifications Card Color is not Proper");
-		}
-
-		if (abstractC.isElementClickable(verificationCard, Duration.ofSeconds(10))) {
+		if (abstractC.isElementClickable(verificationCard)) {
 			System.out.println("verification Card is clickable");
-			softAssert.assertTrue(true);
 		}else {
-			Logger.info("verification Card is not Clickable");
-			softAssert.assertTrue(false);
+			Logger.error("verification Card is not Clickable");
+			System.out.println("verification Card is not clickable");
 		}
 		abstractC.clickElement(verificationCard);
 
 		WebElement verificationPageHeader =  verificationPageObject.getElementOfVerficationPageHeader();
-		if (abstractC.isElementDisplayed(verificationPageHeader)) {
-			System.out.println("Successfully navigated to Verification Page");
-			softAssert.assertTrue(true);
-		}else {
-			System.out.println("Error in Navigation to Verification page");
-			softAssert.assertTrue(false);
-		}
-		softAssert.assertAll();
+		abstractC.verifyTextOfthWebEement(verificationPageHeader, configData.ExpectedVerificationsPageHeader);
 	}
 
 	public void verifyCreditsAvailableCard() throws InterruptedException {
-		abstractC.waitForElementToDisappear(driver, DBObjects.getElementLoader());
-		WebElement creditsAvailableCard = abstractC.waitForElementVisibility(driver, DBObjects.getElementCreditsAvailableCard(),10);
-		String actualBeforecolour = abstractC.getColorOfWebElement("background-color",creditsAvailableCard);
-		Assert.assertEquals(actualBeforecolour,configData.expectedBeforeCardColor);
-		if (actualBeforecolour.equals(configData.expectedBeforeCardColor)) {
-			System.out.println("Before Mouse Hover Credits Available Card Color is Proper");
-		} else {
-			Logger.error("Before Mouse Hover  Credits Available Card Color is not Proper");
-			System.out.println("Before Mouse Hover  Credits Available Card Color is not Proper");
-		}
-		abstractC.moveCursorToWebElement(creditsAvailableCard, 20);
-		String actuaAfterMouseHoverColor = abstractC.getColorOfWebElement("background-color",creditsAvailableCard);
-		Assert.assertEquals(actuaAfterMouseHoverColor,configData.expectedBeforeCardColor);
+		WebElement creditsAvailableCard = abstractC.waitForElementVisibility(driver, DBObjects.getElementCreditsAvailableCard(),30);
+		abstractC.verifyBackGroundColorOfTheElement(creditsAvailableCard, configData.expectedWhiteColor);
+		abstractC.moveCursorToWebElement(creditsAvailableCard, 30);
+		abstractC.verifyBackGroundColorOfTheElement(creditsAvailableCard, configData.expectedWhiteColor);
 
-		if (actuaAfterMouseHoverColor.equals(configData.expectedBeforeCardColor)) {
-			System.out.println("After Mouse Hover Credits Available Card Color is Proper");
-		} else {
-			Logger.error("After Mouse Hover  Credits Available Card Color is not Proper");
-			System.out.println("After Mouse Hover  Credits Available Card Color is not Proper");
-		}
-
-		if (abstractC.isElementClickable(creditsAvailableCard, Duration.ofSeconds(10))) {
+		if (abstractC.isElementClickable(creditsAvailableCard)) {
 			Logger.error("Credits Available Card is Clickable");
 			System.out.println("Credits Available Card is clickable");
-			softAssert.assertTrue(false);
 		}else {
 			System.out.println("Credits Available Card is Not clickable");
 		}
-		softAssert.assertAll();
 	}
 
-	public void VerifyNavigationToProfilePage() throws InterruptedException {
-		abstractC.waitForElementToDisappear(driver, DBObjects.getElementLoader());	
+	public MyProfilePageEvent VerifyNavigationToProfilePage() throws InterruptedException {
 		abstractC.waitForWebElementToAppear(driver, DBObjects.getElementProfileDropDown());	
 		abstractC.waitForSeconds(1);
 		abstractC.clickElement(DBObjects.getElementProfileDropDown());
@@ -117,17 +80,17 @@ public class DashBoardPageEvent extends BaseClass{
 			System.out.println("Naviagation to My profile page Failed");
 			Assert.assertEquals(actualPageHeader, configData.myProfilePageHeaderText,"Naviagation to My profile page Failed");
 		}
+		return new MyProfilePageEvent();
 	}
 
 
 	public void verifyVerificationCardCountOfUserType(String userType) throws InterruptedException {
-		abstractC.waitForElementToDisappear(driver, DBObjects.getElementLoader());
 		String User = userType.toLowerCase();
 		String actualVerificationCount = "0";
 		String expectedVerificationCount = "0";
 		switch (User) {
 		case "customer":
-			if (DBObjects.getElementVerificationsCard().isDisplayed()) {
+			if (abstractC.isElementDisplayed(DBObjects.getElementVerificationsCard())) {
 				System.out.println("Veification card is displayed");
 			}else {
 				Assert.assertTrue(false,"Veification card is Not displayed");
@@ -138,7 +101,7 @@ public class DashBoardPageEvent extends BaseClass{
 
 			break;
 		case "business user":
-			if (DBObjects.getElementVerificationsCard().isDisplayed()) {
+			if (abstractC.isElementDisplayed(DBObjects.getElementVerificationsCard())) {
 				System.out.println("Veification card is displayed");
 			}else {
 				Assert.assertTrue(false,"Veification card is Not displayed");
@@ -150,7 +113,7 @@ public class DashBoardPageEvent extends BaseClass{
 			break;
 
 		case "business admin":
-			if (DBObjects.getElementVerificationsCard().isDisplayed()) {
+			if (abstractC.isElementDisplayed(DBObjects.getElementVerificationsCard())) {
 				System.out.println("Veification card is displayed");
 			}else {
 				Assert.assertTrue(false,"Veification card is Not displayed");
@@ -195,7 +158,8 @@ public class DashBoardPageEvent extends BaseClass{
 		}
 	}
 
-	public UsersPageEvent verifyNavigationToUserPage() {
+	public UsersPageEvent verifyNavigationToUserPage() throws InterruptedException {
+		abstractC.waitForElementVisibility(driver, DBObjects.getElementUsersCard(),30);
 		abstractC.clickElement(DBObjects.getElementUsersCard());
 		WebElement actualPageHeader = usersObj.getElemenUsersPageHeader();
 		abstractC.verifyTextOfthWebEement(actualPageHeader, configData.ExpectedUserPageHeader);
@@ -208,12 +172,12 @@ public class DashBoardPageEvent extends BaseClass{
 		abstractC.waitForSeconds(1);
 		double 	UserCount = 0;
 		try {
-			 	UserCount = Double.valueOf(DBObjects.getElementUsersCount().getText());
+			UserCount = Double.valueOf(DBObjects.getElementUsersCount().getText());
 		} catch (NumberFormatException e) {
 			abstractC.waitForSeconds(2);
-			 	UserCount = Double.valueOf(DBObjects.getElementUsersCount().getText());
+			UserCount = Double.valueOf(DBObjects.getElementUsersCount().getText());
 		}
-		
+
 		int userCount  = (int)UserCount;
 		return userCount;
 	}
@@ -225,11 +189,57 @@ public class DashBoardPageEvent extends BaseClass{
 		return new DashBoardPageEvent();		
 	}	
 	
+	
+
 	public UsersPageEvent verifyNavigationToUserPageThroughNavigation() {
-		
+
 		abstractC.clickElement(DBObjects.getElementUsersNavigationIcon());
 		abstractC.moveCursorToWebElement(DBObjects.getElementProfileDropDown(), 20);
 		abstractC.verifyTextOfthWebEement(usersObj.getElemenUsersPageHeader(), configData.ExpectedUserPageHeader);
 		return new UsersPageEvent();		
+	}
+	
+	public WalletPageEvent verifyNavigationToWalletPageThroughNavigation() {
+
+		abstractC.clickElement(DBObjects.getElementWalletNavigationIcon());
+		abstractC.moveCursorToWebElement(DBObjects.getElementProfileDropDown(), 20);
+		abstractC.verifyTextOfthWebEement(usersObj.getElemenUsersPageHeader(), configData.ExpectedWalletPageHeader);
+		return new WalletPageEvent();		
+	}
+
+	public ChangePasswordEvent verifyNavigationToChangePasswordPage() {
+		abstractC.waitForWebElementToAppear(driver, DBObjects.getElementProfileDropDown());	
+		abstractC.waitForSeconds(1);
+		abstractC.clickElement(DBObjects.getElementProfileDropDown());
+		abstractC.clickElement(DBObjects.getElementChange_Password());
+		abstractC.verifyTextOfthWebEement(cpObject.getElementChangePasswordPageHeader(), configData.expectedChangePasswordPageHeader);
+		return new ChangePasswordEvent();		
+	}
+
+	public ReviewPageEvent VerifyNavigationToReviewPage() {
+		abstractC.waitForWebElementToAppear(driver, DBObjects.getElementProfileDropDown());	
+		abstractC.waitForSeconds(1);
+		abstractC.clickElement(DBObjects.getElementProfileDropDown());
+		abstractC.clickElement(DBObjects.getElementReview());
+		abstractC.verifyTextOfthWebEement((rpObjct.getElementReviewPageHeader()), configData.expectedReviewPageHeader);
+		return new ReviewPageEvent();		
+	}
+
+	public void verifyTourFunctionalityInDashBoardOfCustomer() {
+		abstractC.waitForWebElementToAppear(driver, DBObjects.getElementTourTitle());
+		abstractC.verifyTextOfthWebEement(DBObjects.getElementTourTitle(), configData.expectedWalletTitle);
+		if(!(abstractC.isElementEnabled(DBObjects.getElementTourPreviousBtn()))
+				&& abstractC.isElementClickable(DBObjects.getElementTourNextBtn())){
+			System.out.println("Wallet Tour is Correctly visible");
+			
+		}
+		abstractC.clickElement(DBObjects.getElementTourNextBtn());
+		abstractC.waitForSeconds(3);
+		abstractC.verifyTextOfthWebEement(DBObjects.getElementTourTitle(), configData.expectedVerificationTitle);
+		if(!(abstractC.isElementEnabled(DBObjects.getElementTourPreviousBtn()))
+				&& abstractC.isElementClickable(DBObjects.getElementTourDoneBtn())){
+			System.out.println("Verification Tour is Correctly visible");
+		}
+		abstractC.clickElement(DBObjects.getElementTourDoneBtn());
 	}	
 }

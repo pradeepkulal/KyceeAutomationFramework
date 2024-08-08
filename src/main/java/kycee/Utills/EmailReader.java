@@ -58,6 +58,24 @@ public class EmailReader {
 		return otp.value();
 	}
 	
+	public String  getExpiredEditEmailOTPFromEmail(String email) throws MailosaurException, IOException {
+		MailosaurClient mailosaur = new MailosaurClient(cons.mailosaurAPIKey);
+		Message message = wiatForEmail(email, mailosaur,"KYCEE: Email Verification via OTP");
+		String messageID = message.id();
+		deleteEmailWithId(messageID);
+		Code otp = message.html().codes().get(0);
+		return otp.value();
+	}
+	
+	public String  getEditEmailOTPFromEmail(String email) throws MailosaurException, IOException {
+		MailosaurClient mailosaur = new MailosaurClient(cons.mailosaurAPIKey);
+		Message message = wiatForEmail(email, mailosaur,"KYCEE: Email Verification via OTP");
+		String messageID = message.id();
+		deleteEmailWithId(messageID);
+		Code otp = message.html().codes().get(0);
+		return otp.value();
+	}
+	
 	public String  getGeneratePasswordLinkFromEmail(String email) throws MailosaurException, IOException {
 		MailosaurClient mailosaur = new MailosaurClient(cons.mailosaurAPIKey);
 		Message message = wiatForEmail(email, mailosaur,"KYCEE: Generate Password");
@@ -98,7 +116,7 @@ public class EmailReader {
 	}
 	public String  getotpFromEmailUsingID(String email) throws MailosaurException, IOException  {
 		MailosaurClient mailosaur = new MailosaurClient(cons.mailosaurAPIKey);
-		Message message = wiatForEmail(email, mailosaur, email);
+		Message message = wiatForEmail(email, mailosaur, "KYCEE: Account Activation via OTP");
 		String messageID = message.id();
 		deleteEmailWithId(messageID);
 		Code otp = message.html().codes().get(0);

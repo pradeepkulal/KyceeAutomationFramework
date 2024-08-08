@@ -7,6 +7,7 @@ import kycee.Base.BaseClass;
 
 public class Constants extends BaseClass {
 
+	
 	public static String QA_URL = "https://qa.kycee.in";
 	public static String DEV_URL = "https://dev.kycee.in";
 	public static String PROD_URL = "https://kycee.in";
@@ -25,7 +26,10 @@ public class Constants extends BaseClass {
 	public static String notificationMessageExcelSheet = "Notification Message";
 	public static String notificationMessageColName = "New Notification Message";
 	public static String credentialsSheet = "sheet1";
+	public static String emailCol = "Email";
+	public static String passwordCol = "Password";
 	public static String LoginTestDataPath = ".//src//main//resources//LoginTestData.xlsx";
+	public static String invalidPNGFIle = "C://Users//Intuitiveapps//eclipse-workspace//Kyce//src//main//resources//LoginTestData.xlsx";
 	
 
 	/*--------------------------Abstract Loactors --------------------*/
@@ -51,6 +55,8 @@ public class Constants extends BaseClass {
 	public static String phoneNumber = "phoneNumber";
 	public static String formSubmitBtn = "//button[@type='submit']";
 	public static String firstRowInList ="(//div[@role='row'])[2]";
+	public static String uploadXpath = "//input[@type='file']";
+	
 
 	/* -------------------------------------- Locators of Home Page -------------------------------*/
 
@@ -170,6 +176,7 @@ public class Constants extends BaseClass {
 	public String GeneratePasswordPageHeader ="//h3";
 	public String pageExpiredText = "//h1";
 
+
 	
 	
 	// --------------------------------------- Activate Account Page Constants ---------------------------------- //
@@ -188,7 +195,11 @@ public class Constants extends BaseClass {
 	public static String invalidOTPNotification = "//div[text()='The OTP you entered is invalid.']";
 
 	// --------------------------------------- Dashboard Page Constants ---------------------------------- //
-
+	public String tourPreviousBtn = "//button[text()='Prev']";
+	public String tourNextBtn = "//button[text()='Next']";
+	public String tourDoneBtn = "//button[text()='Done']";
+	public String tourTitle = "//h2";
+	
 	public static String usersCard = "//div[text()='Users']";
 
 	public static String VerificationsCard = "//div[text()='Verifications']/parent::div/parent::div";
@@ -215,17 +226,22 @@ public class Constants extends BaseClass {
 	
 	public static String My_Profile ="//a[text()=' My Profile']";
 	
-	public static String  Change_Password ="//button[text()=' Change Password]";
+	public static String  Change_Password ="//a[text()=' Change Password']";
 	
-	public static String  Review  ="//button[text()=' Review']";
+	public static String  Review  ="//a[text()=' Review']";
 	
-	public static String  Logout ="//button[text()=' Logout']";
+	public static String  Logout ="//a[text()=' Logout']";
 	
-	public static String  Settings ="//button[text()=' Settings']";
+	public static String  Settings ="//a[text()=' Settings']";
 	
 	public static String verifyYourIdentityButton ="//button[text()='Verify Your Identity']";
 	
 	// --------------------------------------- My Profile Page Constants ---------------------------------- //
+	public String profilePhoto = "//div[@class='profile-edit-cion']";
+	public String profilePhotoEditIcon = "//label[@for='profile-file']//*[name()='svg']";
+	public String profileImgCancelbtn = "//button[text()='Cancel']";
+	
+	public static String profileImgSubmitbtn = "//button[text()='Submit']";
 	public static String userFullName ="//h3[@class='user-profile-name']";
 	public static String userType ="//p[@class='text-capitalize']";
 	public static String myProfilePageHeader ="//h4[@class='sc-bcXHqe kYRFBC pb-0']";
@@ -245,6 +261,65 @@ public class Constants extends BaseClass {
 	public static String userPinCode ="//label[text()='Pin Code']//following-sibling::p";
 	
 	public static String VerifyYourIdentityButton = "//button[@class='sc-dkrFOg idVDld btn ']";
+	
+	
+	public static String editfirstName = "first_name";
+	public static String editlastName = "last_name";
+	public static String editemail = "email";
+	public static String editphoneNumber = "phone_number";
+	public String emailActivationPopUpHeader = "//div[@class='modal-title h4']";
+	public static String emailActivationPopUpSubmitbtn = "(//button[@class='sc-dkrFOg idVDld btn '])[2]";
+	
+	// --------------------------------------- ChangePassword Page Constants ---------------------------------- //
+	public String changePasswordPageHeader = "//h4";
+	
+	public static String oldPasswordField = "//input[@name='password']";
+	public static String newPasswordField = "//input[@name='newPassword']"; 
+	public static String confirmNewPasswordField = "//input[@name='confirmPassword']";
+	public static String toggleEyeIcon = "icon-group-end";
+	
+	// --------------------------------------- Review Page Constants ---------------------------------- //
+	public static String ReviewPageHeader = "//h4";
+	public static String reviewTitleInput ="//input[@name='title']";
+	public static String reviewDescriptionInput ="//textarea[@name='description']";
+	public static String ratingstar1 ="//div[@class='review-container']/div/div[1]//*[name()='svg'][1]";
+	public static String ratingstar2="//div[@class='review-container']/div/div[1]//*[name()='svg'][2]";
+	public static String ratingstar3 ="//div[@class='review-container']/div/div[1]//*[name()='svg'][3]";
+	public static String ratingstar4 ="//div[@class='review-container']/div/div[1]//*[name()='svg'][4]";
+	public static String ratingstar5 ="//div[@class='review-container']/div/div[1]//*[name()='svg'][5]";
+	
+	public String reviewTitle = "(//p[@class='quote'])[1]";
+	public String reviewDescription = "(//p[@class='quote'])[2]";
+	public String reviewRating1 = "(//div[@class='star-rating']//i)[1]";
+	public String reviewRating2 = "(//div[@class='star-rating']//i)[2]";
+	public String reviewRating3 = "(//div[@class='star-rating']//i)[3]";
+	public String reviewRating4 = "(//div[@class='star-rating']//i)[4]";
+	public String reviewRating5 = "(//div[@class='star-rating']//i)[5]";
+	
+	public String reviewUpdateCancelButton = "//button[@class='sc-iBYQkv jEswLR btn ']";
+	public String editReviewIcon = "//div[@class='quote-container']//div[1]";
+	public String editReviewPageHeader ="//h4";
+	public String editReviewBackIcon = "(//*[name()='svg'])[11]";
+	
+	
+	// --------------------------------------- Wallet Page Constants ---------------------------------- //
+	public String walletTourTitle = "//h3";
+	public String noDataText = "//p[@class='nodataAvailable']";
+	public String onlineOrders = "//li[normalize-space()='Online Orders']";
+	public String offlineOrdersTab = "//li[normalize-space()='Offline Orders']";
+	public String transactionsTab = "//li[normalize-space()='Transactions']";
+	public String addCreditsBtn = "//div[@class='add-redit-transaction']//button[@type='button'][normalize-space()='Add Credits']";
+	public String addCreditsHeader = "//div[@class='modal-title h4']";
+	public String quantityField = "(//input[@class='form-control'])[2]";
+	public String creiditsPrice = "(//td[@class='text-end'])[1]";
+	public String creiditsAmount = "(//td[@class='text-end'])[2]";
+	public String subTotal = "div[class='purchase-form'] div:nth-child(1) label:nth-child(2)";
+	public String gst = "div[class='purchase-form'] div:nth-child(2) label:nth-child(2)";
+	public String totalAmount = "div[class='purchase-form'] div:nth-child(3) label:nth-child(2)";
+	public String checkoutViaUPIBtn = "//div[@class='modal-footer']//button[@type='button']";
+	public String paymentHeader = "//h4[normalize-space()='Payment']"; 
+	public String QRCode = "(//div[@class='upi-section']//div)[1]";
+	public String UTRNumberField = "//input";
 	
 	
 	// --------------------------------------- Verifications Page Constants ---------------------------------- //
